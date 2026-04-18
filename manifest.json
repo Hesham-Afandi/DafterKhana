@@ -1,11 +1,16 @@
 {
-  "name": "دَفْتَرُ خَانَة | لكل كلمة مكان",
+  "name": "دَفْتَرُ خَانَة",
   "short_name": "دفتر خانة",
-  "description": "مكتبة رقمية شاملة: أدبية، إسلامية، علمية، إنجليزية، أطفال، صوتيات. إعداد: هشام أفندي",
-  "start_url": "/index.html",
+  "description": "مكتبة رقمية شاملة: أدبية، إسلامية، علمية، إنجليزية، أطفال، صوتيات",
+  "start_url": "/DafterKhana/",
   "display": "standalone",
-  "background_color": "#0b0f14",
+  "background_color": "#0a0e1a",
   "theme_color": "#c9a227",
-  "icons": [{"src": "logo.png", "sizes": "192x192", "type": "image/png"}, {"src": "logo.png", "sizes": "512x512", "type": "image/png"}],
-  "lang": "ar", "dir": "rtl"
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src": "logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ],
+  "lang": "ar",
+  "dir": "rtl"
 }
