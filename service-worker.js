@@ -1,0 +1,5 @@
+const CACHE_NAME = 'daftar-khana-v1';
+const ASSETS = ['/','/index.html','/manifest.json','/logo.webp','/favicon.ico'];
+self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS))); self.skipWaiting(); });
+self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(names => Promise.all(names.filter(n => n !== CACHE_NAME).map(n => caches.delete(n))))); self.clients.claim(); });
+self.addEventListener('fetch', e => { if(e.request.url.includes('tawk.to')||e.request.url.includes('crisp.chat')) return; e.respondWith(caches.match(e.request).then(cached => cached || fetch(e.request).then(res => { if(!res||res.status!==200) return res; const clone=res.clone(); caches.open(CACHE_NAME).then(c => c.put(e.request, clone)); return res; }).catch(() => e.request.mode==='navigate' ? caches.match('/index.html') : new Response('⚠️ غير متاح بدون إنترنت',{headers:{'Content-Type':'text/html; charset=utf-8'}})))); });
