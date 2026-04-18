@@ -80,6 +80,19 @@ body{
   background-size:40px 40px;
 }
 body.light .geo-pattern{opacity:.04}
+   /* تعديل اللوجو في الهيدر عشان يظهر كصورة */
+img.brand-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: var(--r-sm);
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px var(--gold-glow);
+  background: transparent !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  display: block !important;
+}
 
 /* ═══════════════════════════════════════════════
    PRELOADER
@@ -304,7 +317,7 @@ body.light .geo-pattern{opacity:.04}
 <!-- ✅ LOADER مع اللوجو -->
 <div id="loader">
   <div class="loader-ring"></div>
-  <img src="logo.png" alt="دَفْتَرُ خَانَة" class="loader-logo" onerror="this.style.display='none'">
+  <img src="loader.png" alt="دَفْتَرُ خَانَة" class="loader-logo" onerror="this.style.display='none'">
   <div class="loader-text">جاري تحضير المكتبة...</div>
 </div>
 
@@ -340,8 +353,7 @@ body.light .geo-pattern{opacity:.04}
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="#" onclick="showView('home');return false">
-      <div class="brand-icon">خ</div>
-      <div><div class="brand-name">دَفْتَرُ خَانَة</div><span class="brand-sub">لكل كلمة مكان</span></div>
+<img src="logo.png" alt="شعار دفتر خانة" class="brand-icon">      <div><div class="brand-name">دَفْتَرُ خَانَة</div><span class="brand-sub">لكل كلمة مكان</span></div>
     </a>
     <button class="search-trigger" onclick="openSearch()"><i class="fas fa-search"></i><span>بحث في جميع المكتبات...</span></button>
     <div class="header-actions">
