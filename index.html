@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>دَفْتَرُ خَانَة | لكل كلمة مكان</title>
-<meta name="description" content="مكتبة رقمية عربية شاملة — أدب، إسلاميات، علوم، أطفال، صوتيات. إعداد: هشام أفندي">
-<meta name="theme-color" content="#0a0e1a">
+<title>دَفْتَرُ خَانَة | لكل كلمة مكان - عقل المؤلف بين يديك</title>
+<meta name="description" content="مكتبة رقمية عربية شاملة — أدب، إسلاميات، علوم، أطفال، صوتيات. عقل المؤلف بين يديك. إعداد: هشام أفندي">
 
-<!-- ✅ 1. إعدادات المشاركة (ظهور اللوجو والسlogan عند إرسال الرابط) -->
+<!-- ✅ إعدادات المشاركة (اللوجو + السلوجان) -->
 <meta property="og:title" content="دَفْتَرُ خَانَة | عقل المؤلف بين يديك">
 <meta property="og:description" content="مكتبة رقمية عربية فاخرة تضم آلاف الكتب والمصادر. عقل المؤلف بين يديك.">
 <meta property="og:image" content="https://hesham-afandi.github.io/DafterKhana/logo.png">
@@ -23,6 +22,7 @@
 <link rel="shortcut icon" href="logo.png" type="image/png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a0e1a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="دفتر خانة">
@@ -110,17 +110,15 @@ body{
 ::-webkit-scrollbar-thumb:hover{background:var(--gold)}
 
 /* ═══════════════════════════════════════════════
-   ANIMATED BACKGROUND (✅ تم تعديلها لتضمين صورة الخلفية)
+   ANIMATED BACKGROUND مع صورة الخلفية bg.jpg
 ═══════════════════════════════════════════════ */
 .bg-canvas{
   position:fixed;inset:0;z-index:-2;
-  /* تم إضافة صورة الخلفية هنا */
   background: linear-gradient(rgba(10,14,26,0.92), rgba(10,14,26,0.92)), url('bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-/* طبقة النقش الهندسي فوق الخلفية */
 .geo-pattern{
   position:fixed;inset:0;z-index:-1;
   opacity:.03;
@@ -132,7 +130,7 @@ body{
 body.light .geo-pattern{opacity:.04}
 
 /* ═══════════════════════════════════════════════
-   PRELOADER - مكبر بحجم الشاشة
+   PRELOADER - مكبر بحجم الشاشة مع اللوجو
 ═══════════════════════════════════════════════ */
 #loader{
   position:fixed;
@@ -894,7 +892,7 @@ body.light .geo-pattern{opacity:.04}
 
 <!-- ✅ LOADER مكبر بحجم الشاشة مع اللوجو -->
 <div id="loader">
-  <img src="loader.png" alt="دَفْتَرُ خَانَة" class="loader-logo">
+  <img src="logo.png" alt="دَفْتَرُ خَانَة" class="loader-logo">
   <div class="loader-text">جاري تحضير المكتبة...</div>
 </div>
 
@@ -1009,7 +1007,7 @@ body.light .geo-pattern{opacity:.04}
   <button class="tab-btn" data-view="favorites" onclick="showView('favorites')"><i class="fas fa-heart"></i> المفضلة</button>
 </div>
 
-<!-- ═══ MAIN ══ -->
+<!-- ═══ MAIN ═══ -->
 <main class="main-area">
 
   <!-- HOME -->
@@ -1241,7 +1239,7 @@ body.light .geo-pattern{opacity:.04}
 
 <script>
 /* ═══════════════════════════════════════════════
-   LIBRARY DATA - كاملة بدون اختصار
+   LIBRARY DATA - كاملة بدون اختصار (جميع الروابط من الكود الثاني)
 ═══════════════════════════════════════════════ */
 const libraries = {
   literary: {
@@ -1275,6 +1273,8 @@ const libraries = {
       {name:"جبران خليل جبران", url:"https://is.gd/WsqtSK", bio:"شاعر الروح"},
       {name:"فاروق جويده", url:"https://is.gd/GBaeEd", bio:"شاعر الجيل"},
       {name:"محمد عفيفي مطر", url:"https://is.gd/UHa1RD", bio:"شاعر الرمزية"},
+      {name:"محمود تيمور", url:"https://is.gd/UmiJBY", bio:"رائد القصة"},
+      {name:"مصطفى صادق الرافعي", url:"https://is.gd/qNkVuN", bio:"أديب البيان"},
       {name:"مي زيادة", url:"https://is.gd/gUumHa", bio:"أديبة الصالون الأدبي"}
     ],
     "شعر - عالمي": [
@@ -1285,67 +1285,137 @@ const libraries = {
       {name:"احسان عبد القدوس", url:"https://is.gd/pfL4zi", bio:"رومانسية وواقعية"},
       {name:"جمال الغيطاني", url:"https://is.gd/E33e0f", bio:"الرواية التاريخية"},
       {name:"غسان كنفاني", url:"https://is.gd/UwPIk7", bio:"أدب المقاومة"},
+      {name:"فرج فودة", url:"https://is.gd/gnHofU", bio:"مفكر روائي"},
+      {name:"قاسم أمين", url:"https://is.gd/xerz1o", bio:"رائد التحرير"},
       {name:"نجيب محفوظ", url:"https://is.gd/OiF8OiF", bio:"أديب نوبل"},
       {name:"يوسف السباعي", url:"https://is.gd/jI6r2E", bio:"روائي الوطني"},
       {name:"أحمد يونس", url:"https://is.gd/jYeuHr", bio:"كاتب ومترجم"},
+      {name:"أوراق شمعون المصري", url:"https://is.gd/wIjI0J", bio:"دراسات أدبية"},
+      {name:"أحمد خالد مصطفى", url:"https://is.gd/6f4nGq", bio:"أدب الشباب"},
+      {name:"السلسلة التاريخية - مصورة", url:"https://is.gd/EHm2Hs", bio:"تاريخ مصور"},
+      {name:"ترجمات علا ديوب", url:"https://is.gd/N5PpzI", bio:"أدب مترجم"},
       {name:"توفيق الحكيم", url:"https://is.gd/3u6s1d", bio:"أديب الفكر"},
+      {name:"جوجو مويس", url:"https://is.gd/wYaLV9", bio:"روايات عاطفية"},
       {name:"حنان لاشين", url:"https://is.gd/5WCNgp", bio:"أدب نسائي"},
+      {name:"ديزني", url:"https://is.gd/H9oXKo", bio:"قصص مصورة"},
       {name:"روايات منوعة", url:"https://is.gd/HzqsQa", bio:"مختارات روائية"},
+      {name:"إسعاد يونس", url:"https://is.gd/Z812Om", bio:"أدب كوميدي"},
       {name:"سارة الذهبي", url:"https://is.gd/TTMaoh", bio:"أدب شبابي"},
+      {name:"شكسبير", url:"https://is.gd/6YM8WU", bio:"كلاسيكيات مترجمة"},
       {name:"شيرلوك هولمز", url:"https://is.gd/TBJXdy", bio:"قصص بوليسية"},
-      {name:"عمر طاهر", url:"https://is.gd/y1Ke5F", bio:"روايات شبابية"},
+      {name:"صلاح جاهين", url:"https://is.gd/HNW4BL", bio:"شعر عامي"},
+      {name:"فهد عامر - نظرية الفستق", url:"https://is.gd/Gx00KI", bio:"تنمية بشرية"},
+      {name:"قصص عالمية كوميك", url:"https://is.gd/tHGZgz", bio:"كوميكس عالمي"},
+      {name:"قصص مصورة", url:"https://is.gd/NjnZkB", bio:"قصص مصورة عربية"},
+      {name:"محمد صادق", url:"https://is.gd/vi2id7", bio:"أدب معاصر"},
+      {name:"محمد طه", url:"https://is.gd/u2smnJ", bio:"أدب شعبي"},
+      {name:"محمود السعدني", url:"https://is.gd/JqVnMK", bio:"أدب ساخر"},
       {name:"مصطفى محمود", url:"https://is.gd/KRU2ES", bio:"فلسفة وأدب"},
-      {name:"محمود السعدني", url:"https://is.gd/JqVnMK", bio:"أدب ساخر"}
+      {name:"مغامرات استريكس", url:"https://is.gd/j7LyvD", bio:"كوميكس فرنسي"},
+      {name:"ميكي", url:"https://is.gd/xmmIxP", bio:"قصص أطفال"},
+      {name:"نجيب محفوظ", url:"https://is.gd/uJsnWp", bio:"روايات خالدة"},
+      {name:"هاري بوتر - كوميك", url:"https://is.gd/UMvweb", bio:"فانتازيا مصورة"},
+      {name:"هبة السواح", url:"https://is.gd/A9knxk", bio:"أدب أطفال"},
+      {name:"يوسف السباعي", url:"https://is.gd/hWx2Kj", bio:"روايات وطنية"}
     ],
     "روايات عالمية": [
       {name:"أغاثا كريستي", url:"https://is.gd/gRvr2v", bio:"ملكة الجريمة"},
       {name:"أحمد مراد", url:"https://is.gd/suks3l", bio:"إثارة معاصرة"},
+      {name:"اغاثا فتاة الألغاز", url:"https://is.gd/Xm6pLr", bio:"غموض شبابي"},
       {name:"الاخوة كارمازوف", url:"https://is.gd/CB5pfi", bio:"كلاسيكية روسية"},
+      {name:"العقاد", url:"https://is.gd/kE1R9L", bio:"فكر وأدب"},
+      {name:"المازني", url:"https://is.gd/yyMo5B", bio:"أدب ساخر"},
+      {name:"تامر إبراهيم", url:"https://is.gd/ui08nx", bio:"كوميديا"},
+      {name:"ثروت أباظه", url:"https://is.gd/o2ZOgj", bio:"أدب خفيف"},
+      {name:"جاك فوتريل", url:"https://is.gd/QZ4oES", bio:"غموض أمريكي"},
       {name:"جبران", url:"https://is.gd/PLWtGe", bio:"أدب روحي"},
       {name:"جول فيرن", url:"https://is.gd/TCgJlI", bio:"خيال علمي"},
+      {name:"حسن الجندي", url:"https://is.gd/jW2Ec3", bio:"أدب شعبي"},
+      {name:"حسين السيد", url:"https://is.gd/yUcp05", bio:"أغاني وأدب"},
+      {name:"خولة حمدي", url:"https://is.gd/546bUT", bio:"روايات رومانسية"},
       {name:"دويستوفسكي", url:"https://is.gd/zDElly", bio:"نفسية روسية"},
+      {name:"روايات منوعة", url:"https://is.gd/fRWs0g", bio:"مختارات عالمية"},
+      {name:"روبرت بار", url:"https://is.gd/8Sb8IJ", bio:"مغامرات"},
+      {name:"سلسلة عبر الزمن", url:"https://is.gd/56GD7x", bio:"تاريخ روائي"},
       {name:"سيد الخواتم", url:"https://is.gd/MXOFMq", bio:"فانتازيا ملحمية"},
+      {name:"شوقي عبدالحكيم", url:"https://is.gd/rfHM6V", bio:"أدب تاريخي"},
       {name:"طه حسين", url:"https://is.gd/EFEkeW", bio:"أدب ونقد"},
       {name:"عالم نارنيا", url:"https://is.gd/HAsWR3", bio:"فانتازيا أطفال"},
+      {name:"عمر طاهر", url:"https://is.gd/y1Ke5F", bio:"روايات شبابية"},
+      {name:"عمرو عبدالحميد", url:"https://is.gd/eH07dr", bio:"أدب معاصر"},
       {name:"كافكا", url:"https://is.gd/cHgycy", bio:"عبثية وجودية"},
+      {name:"كتب منوعة", url:"https://is.gd/Xa9Poh", bio:"مختارات"},
       {name:"كليلة ودمنة", url:"https://is.gd/0xLq3y", bio:"حكايات حكمة"},
-      {name:"هاري بوتر", url:"https://is.gd/NBwial", bio:"سحر وفانتازيا"},
+      {name:"لعبة صراع العروش", url:"https://is.gd/YiMMWD", bio:"فانتازيا سياسية"},
       {name:"مباريات الجوع", url:"https://is.gd/uQQbo0", bio:"ديستوبيا شبابية"},
-      {name:"مغامرات أرسين لوبين", url:"https://is.gd/kRDKLO", bio:"غموض فرنسي"}
+      {name:"مغامرات أرسين لوبين", url:"https://is.gd/kRDKLO", bio:"غموض فرنسي"},
+      {name:"مغامرات تان تان", url:"https://is.gd/SaUiuQ", bio:"مغامرات مصورة"},
+      {name:"هاري بوتر", url:"https://is.gd/NBwial", bio:"سحر وفانتازيا"}
     ],
     "فكر وفلسفة": [
       {name:"ارسطو", url:"https://is.gd/vxSMwX", bio:"المعلم الأول"},
       {name:"أفلاطون", url:"https://is.gd/fSl2td", bio:"فلسفة المثالية"},
+      {name:"الحلاج", url:"https://is.gd/eMZYcw", bio:"تصوف وفلسفة"},
       {name:"العقاد", url:"https://is.gd/oogTE8", bio:"موسوعي الفكر"},
+      {name:"المنفلوطي", url:"https://is.gd/hVtoYV", bio:"أديب العبرات"},
+      {name:"أوجستو مونتيرو", url:"https://is.gd/UVlP80", bio:"أدب لاتيني"},
       {name:"فولتيير", url:"https://is.gd/NwnB7N", bio:"تنوير وفلسفة"},
       {name:"فيكتور هوجو", url:"https://is.gd/voVidW", bio:"رومانسية وإنسانية"}
+    ],
+    "منوعات": [
+      {name:"أحمد يونس", url:"https://is.gd/jYeuHr", bio:"مقالات وترجمات"},
+      {name:"أوراق شمعون المصري", url:"https://is.gd/wIjI0J", bio:"دراسات ثقافية"},
+      {name:"أحمد خالد مصطفى", url:"https://is.gd/6f4nGq", bio:"أدب رقمي"},
+      {name:"السلسلة التاريخية - مصورة", url:"https://is.gd/EHm2Hs", bio:"تاريخ مصور"},
+      {name:"ترجمات علا ديوب", url:"https://is.gd/N5PpzI", bio:"ترجمات أدبية"},
+      {name:"توفيق الحكيم", url:"https://is.gd/3u6s1d", bio:"فكر ومسرح"},
+      {name:"جوجو مويس", url:"https://is.gd/wYaLV9", bio:"رومانسية معاصرة"},
+      {name:"حنان لاشين", url:"https://is.gd/5WCNgp", bio:"أدب نسائي"},
+      {name:"ديزني", url:"https://is.gd/H9oXKo", bio:"عالم الأطفال"},
+      {name:"روايات منوعة", url:"https://is.gd/HzqsQa", bio:"مختارات روائية"}
     ]
   },
   islamic: {
     "العقيدة": [{name:"كتب العقيدة", url:"https://shamela.ws/category/1", bio:"807 كتاب", source:"shamela.ws"}],
     "الفرق والردود": [{name:"كتب الفرق والردود", url:"https://shamela.ws/category/2", bio:"151 كتاب", source:"shamela.ws"}],
     "التفسير": [{name:"كتب التفسير", url:"https://shamela.ws/category/3", bio:"273 كتاب", source:"shamela.ws"}],
-    "علوم القرآن": [{name:"علوم القرآن وأصول التفسير", url:"https://shamela.ws/category/4", bio:"311 كتاب", source:"shamela.ws"}],
+    "علوم القرآن وأصول التفسير": [{name:"علوم القرآن", url:"https://shamela.ws/category/4", bio:"311 كتاب", source:"shamela.ws"}],
     "التجويد والقراءات": [{name:"كتب التجويد", url:"https://shamela.ws/category/5", bio:"152 كتاب", source:"shamela.ws"}],
     "كتب السنة": [{name:"أهم كتب الحديث", url:"https://shamela.ws/category/6", bio:"1241 كتاب", source:"shamela.ws"}],
     "شروح الحديث": [{name:"شروح الأحاديث", url:"https://shamela.ws/category/7", bio:"265 كتاب", source:"shamela.ws"}],
+    "التخريج والأطراف": [{name:"أطراف الأحاديث", url:"https://shamela.ws/category/8", bio:"129 كتاب", source:"shamela.ws"}],
+    "العلل والسؤالات الحديثية": [{name:"علل الحديث", url:"https://shamela.ws/category/9", bio:"78 كتاب", source:"shamela.ws"}],
     "علوم الحديث": [{name:"مصطلح الحديث", url:"https://shamela.ws/category/10", bio:"321 كتاب", source:"shamela.ws"}],
     "أصول الفقه": [{name:"أصول الفقه", url:"https://shamela.ws/category/11", bio:"252 كتاب", source:"shamela.ws"}],
+    "علوم الفقه والقواعد الفقهية": [{name:"القواعد الفقهية", url:"https://shamela.ws/category/12", bio:"58 كتاب", source:"shamela.ws"}],
+    "المنطق": [{name:"كتب المنطق", url:"https://shamela.ws/category/13", bio:"11 كتاب", source:"shamela.ws"}],
     "الفقه الحنفي": [{name:"فقه الحنفية", url:"https://shamela.ws/category/14", bio:"87 كتاب", source:"shamela.ws"}],
     "الفقه المالكي": [{name:"فقه المالكية", url:"https://shamela.ws/category/15", bio:"89 كتاب", source:"shamela.ws"}],
     "الفقه الشافعي": [{name:"فقه الشافعية", url:"https://shamela.ws/category/16", bio:"90 كتاب", source:"shamela.ws"}],
     "الفقه الحنبلي": [{name:"فقه الحنابلة", url:"https://shamela.ws/category/17", bio:"153 كتاب", source:"shamela.ws"}],
     "الفقه العام": [{name:"الفقه العام", url:"https://shamela.ws/category/18", bio:"208 كتاب", source:"shamela.ws"}],
     "مسائل فقهية": [{name:"مسائل فقهية", url:"https://shamela.ws/category/19", bio:"429 كتاب", source:"shamela.ws"}],
-    "الرقائق والآداب": [{name:"الرقائق والآداب والأذكار", url:"https://shamela.ws/category/23", bio:"624 كتاب", source:"shamela.ws"}],
+    "السياسة الشرعية والقضاء": [{name:"السياسة والقضاء", url:"https://shamela.ws/category/20", bio:"100 كتاب", source:"shamela.ws"}],
+    "الفرائض والوصايا": [{name:"الفرائض", url:"https://shamela.ws/category/21", bio:"28 كتاب", source:"shamela.ws"}],
+    "الفتاوى": [{name:"مجموعات الفتاوى", url:"https://shamela.ws/category/22", bio:"65 كتاب", source:"shamela.ws"}],
+    "الرقائق والآداب والأذكار": [{name:"الرقائق والآداب", url:"https://shamela.ws/category/23", bio:"624 كتاب", source:"shamela.ws"}],
     "السيرة النبوية": [{name:"كتب السيرة", url:"https://shamela.ws/category/24", bio:"187 كتاب", source:"shamela.ws"}],
-    "التاريخ الإسلامي": [{name:"التاريخ الإسلامي", url:"https://shamela.ws/category/25", bio:"206 كتاب", source:"shamela.ws"}],
+    "التاريخ": [{name:"التاريخ الإسلامي", url:"https://shamela.ws/category/25", bio:"206 كتاب", source:"shamela.ws"}],
     "التراجم والطبقات": [{name:"الطبقات والتراجم", url:"https://shamela.ws/category/26", bio:"577 كتاب", source:"shamela.ws"}],
-    "اللغة والمعاجم": [{name:"علوم اللغة العربية", url:"https://shamela.ws/category/29", bio:"79 كتاب", source:"shamela.ws"}, {name:"معاجم اللغة", url:"https://shamela.ws/category/30", bio:"135 كتاب", source:"shamela.ws"}],
+    "الأنساب": [{name:"علم الأنساب", url:"https://shamela.ws/category/27", bio:"52 كتاب", source:"shamela.ws"}],
+    "البلدان والرحلات": [{name:"الرحلات والبلدان", url:"https://shamela.ws/category/28", bio:"95 كتاب", source:"shamela.ws"}],
+    "كتب اللغة": [{name:"علوم اللغة العربية", url:"https://shamela.ws/category/29", bio:"79 كتاب", source:"shamela.ws"}],
+    "الغريب والمعاجم": [{name:"معاجم اللغة", url:"https://shamela.ws/category/30", bio:"135 كتاب", source:"shamela.ws"}],
     "النحو والصرف": [{name:"النحو والصرف", url:"https://shamela.ws/category/31", bio:"213 كتاب", source:"shamela.ws"}],
-    "الأدب العربي": [{name:"الأدب العربي", url:"https://shamela.ws/category/32", bio:"406 كتاب", source:"shamela.ws"}],
-    "الجوامع والموسوعات": [{name:"الموسوعات والجوامع", url:"https://shamela.ws/category/36", bio:"136 كتاب", source:"shamela.ws"}],
-    "كتب عامة": [{name:"كتب عامة متنوعة", url:"https://shamela.ws/category/39", bio:"357 كتاب", source:"shamela.ws"}]
+    "الأدب": [{name:"الأدب العربي", url:"https://shamela.ws/category/32", bio:"406 كتاب", source:"shamela.ws"}],
+    "العروض والقوافي": [{name:"العروض", url:"https://shamela.ws/category/33", bio:"9 كتب", source:"shamela.ws"}],
+    "الشعر ودواوينه": [{name:"دواوين الشعر", url:"https://shamela.ws/category/34", bio:"25 ديوان", source:"shamela.ws"}],
+    "البلاغة": [{name:"علم البلاغة", url:"https://shamela.ws/category/35", bio:"44 كتاب", source:"shamela.ws"}],
+    "الجوامع": [{name:"الموسوعات والجوامع", url:"https://shamela.ws/category/36", bio:"136 كتاب", source:"shamela.ws"}],
+    "فهارس الكتب والأدلة": [{name:"الفهارس والأدلة", url:"https://shamela.ws/category/37", bio:"102 كتاب", source:"shamela.ws"}],
+    "الطب": [{name:"الكتب الطبية", url:"https://shamela.ws/category/38", bio:"14 كتاب", source:"shamela.ws"}],
+    "كتب عامة": [{name:"كتب عامة متنوعة", url:"https://shamela.ws/category/39", bio:"357 كتاب", source:"shamela.ws"}],
+    "علوم أخرى": [{name:"علوم متنوعة", url:"https://shamela.ws/category/40", bio:"26 كتاب", source:"shamela.ws"}]
   },
   scientific: {
     "الرياضيات": [{name:"مكتبة الرياضيات", url:"https://drive.google.com/drive/folders/1hlRB8F4HLRGJZ6nBSxl3KB2GgpQJksSN", bio:"مراجع شاملة", source:"Google Drive"}],
@@ -1353,12 +1423,13 @@ const libraries = {
     "الهندسة": [{name:"كورس هندسة كهربية", url:"https://drive.google.com/drive/folders/1PO12nYC-FLmhIw5T_I591w4_N1hFTG_7", bio:"هندسة كهربائية", source:"Google Drive"}],
     "كورسات متنوعة": [{name:"كورس ألماني", url:"https://drive.google.com/drive/folders/1SFzDRpXn9zsXEvQfKXGGrYnrXz5hWv6s", bio:"تعلم الألمانية", source:"Google Drive"}, {name:"كورس محاسبة", url:"https://drive.google.com/drive/folders/1gBULgSeSkJLEB9qp2gGHoWMPC5MguhxF", bio:"أساسيات المحاسبة", source:"Google Drive"}],
     "كورس إنجليزي - British Council": [
-      {name:"Grammar", url:"https://learnenglish.britishcouncil.org/grammar", bio:"قواعد الإنجليزية", source:"British Council"},
-      {name:"Vocabulary", url:"https://learnenglish.britishcouncil.org/vocabulary", bio:"مفردات لغوية", source:"British Council"},
-      {name:"Listening", url:"https://learnenglish.britishcouncil.org/listening", bio:"مهارات الاستماع", source:"British Council"},
-      {name:"Reading", url:"https://learnenglish.britishcouncil.org/reading", bio:"مهارات القراءة", source:"British Council"},
-      {name:"Writing", url:"https://learnenglish.britishcouncil.org/writing", bio:"مهارات الكتابة", source:"British Council"},
-      {name:"Speaking", url:"https://learnenglish.britishcouncil.org/speaking", bio:"مهارات التحدث", source:"British Council"}
+      {name:"Grammar - القواعد", url:"https://learnenglish.britishcouncil.org/grammar", bio:"قواعد الإنجليزية", source:"British Council"},
+      {name:"Vocabulary - المفردات", url:"https://learnenglish.britishcouncil.org/vocabulary", bio:"مفردات لغوية", source:"British Council"},
+      {name:"Listening - الاستماع", url:"https://learnenglish.britishcouncil.org/listening", bio:"مهارات الاستماع", source:"British Council"},
+      {name:"Reading - القراءة", url:"https://learnenglish.britishcouncil.org/reading", bio:"مهارات القراءة", source:"British Council"},
+      {name:"Writing - الكتابة", url:"https://learnenglish.britishcouncil.org/writing", bio:"مهارات الكتابة", source:"British Council"},
+      {name:"Speaking - التحدث", url:"https://learnenglish.britishcouncil.org/speaking", bio:"مهارات التحدث", source:"British Council"},
+      {name:"Pronunciation - النطق", url:"https://learnenglish.britishcouncil.org/pronunciation", bio:"تحسين النطق", source:"British Council"}
     ]
   },
   english: {
@@ -1371,6 +1442,7 @@ const libraries = {
       {name:"Literature - English", url:"https://www.gutenberg.org/ebooks/bookshelf/64", bio:"الأدب الإنجليزي", source:"Gutenberg"},
       {name:"Plays", url:"https://www.gutenberg.org/ebooks/bookshelf/68", bio:"مسرحيات", source:"Gutenberg"},
       {name:"Poetry Bookshelf", url:"https://www.gutenberg.org/ebooks/bookshelf/69", bio:"دواوين شعرية", source:"Gutenberg"},
+      {name:"Reference", url:"https://www.gutenberg.org/ebooks/bookshelf/86", bio:"مراجع", source:"Gutenberg"},
       {name:"Science Fiction", url:"https://www.gutenberg.org/ebooks/bookshelf/90", bio:"خيال علمي", source:"Gutenberg"}
     ],
     "Languages - Gutenberg": [
@@ -1382,59 +1454,87 @@ const libraries = {
   },
   children: {
     "قصص مصورة": [
-      {name:"قصص مصورة", url:"https://stories.flash-toons.com/قصص-مصورة/", bio:"قصص أطفال تفاعلية", source:"Flash Toons"},
-      {name:"قصص أطفال بالعربي", url:"https://4mykidz.com/قصص-أطفال-باللغة-العربية", bio:"مكتبة قصص عربية", source:"4MyKidz"}
+      {name:"قصص مصورة", url:"https://stories.flash-toons.com/%D9%82%D8%B5%D8%B5-%D9%85%D8%B5%D9%88%D8%B1%D8%A9/", bio:"قصص أطفال تفاعلية", source:"Flash Toons"}, 
+      {name:"قصص أطفال بالعربي", url:"https://4mykidz.com/%D9%82%D8%B5%D8%B5-%D8%A3%D8%B7%D9%81%D8%A7%D9%84-%D8%A8%D8%A7%D9%84%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9", bio:"مكتبة قصص عربية", source:"4MyKidz"}
     ],
-    "قصص تعليمية": [
-      {name:"قصص الأنبياء", url:"https://lumarstory.com/prophets-stories-for-kids/", bio:"سير الأنبياء", source:"Lumar Story"},
-      {name:"قصص الصحابة", url:"https://lumarstory.com/sahaba-kids-stories/", bio:"سير الصحابة", source:"Lumar Story"},
-      {name:"قصص الحيوانات", url:"https://flash-toons.com/قصص-اطفال-عن-الحيوانات/", bio:"عالم الحيوان", source:"Flash Toons"},
-      {name:"قصص الأخلاق", url:"https://4mykidz.com/قصص-أطفال-باللغة-العربية", bio:"قيم وأخلاق", source:"4MyKidz"}
+    "حكايات قبل النوم": [
+      {name:"قصص قبل النوم", url:"https://stories.flash-toons.com/#%D9%82%D8%B5%D8%B5_%D8%A7%D8%B7%D9%81%D8%A7%D9%84_%D9%82%D8%A8%D9%84_%D8%A7%D9%84%D9%86%D9%88%D9%85", bio:"حكايات هادئة", source:"Flash Toons"}
     ],
-    "تعلم اللغة": [
+    "قصص خيالية": [
+      {name:"قصص خيالية", url:"https://stories.flash-toons.com/?_gl=1%2A1c41mwq%2A_gcl_au%2ANTgzNjE5NzYyLjE3NzU3MTg3Njg.%2A_ga%2AMTI3MTI0MjgxMC4xNzc1NzE4NzY4%2A_ga_TZWTEN5FTZ%2AczE3NzU3MjM0NDMkbzIkZzAkdDE3NzU3MjM0NDUkajU4JGwwJGgw#%D9%82%D8%B5%D8%B5_%D8%A7%D8%B7%D9%81%D8%A7%D9%84_%D8%AE%D9%8A%D8%A7%D9%84%D9%8A%D8%A9", bio:"عالم الخيال", source:"Flash Toons"}
+    ],
+    "حكايات من التراث": [
+      {name:"قصص التراث", url:"https://www.hindawi.org/books/categories/children.stories/", bio:"تراث أطفال", source:"Hindawi"}
+    ],
+    "تعلم اللغة العربية": [
       {name:"تعلم العربية", url:"https://3asafeer.com/", bio:"منصة تعليمية", source:"3asafeer"},
-      {name:"طيور الجنة", url:"https://www.youtube.com/@toyoraljanahtv", bio:"قناة أطفال", source:"YouTube"}
+      {name:"عائلة أون TV", url:"https://www.youtube.com/@Osratouna", bio:"قناة تعليمية", source:"YouTube"},
+      {name:"تعلم الأرقام", url:"https://www.youtube.com/watch?v=csUnMp9Gdjo", bio:"فيديو تعليمي", source:"YouTube"}
     ],
     "أناشيد وأغاني": [
       {name:"أناشيد إسلامية", url:"https://www.youtube.com/playlist?list=PLTisR_eHsplTM6OhVcQAqkZFgsE7C0vXx", bio:"أناشيد هادفة", source:"YouTube"},
-      {name:"أغاني تعليمية", url:"https://www.youtube.com/playlist?list=PLaZ5IJaYPd5P-1MMgxB2D1EWU8C7lNsu5", bio:"أغاني أطفال", source:"YouTube"}
+      {name:"أغاني تعليمية", url:"https://www.youtube.com/playlist?list=PLaZ5IJaYPd5P-1MMgxB2D1EWU8C7lNsu5", bio:"أغاني أطفال", source:"YouTube"},
+      {name:"طيور الجنة", url:"https://www.youtube.com/@toyoraljanahtv", bio:"قناة أطفال", source:"YouTube"}
+    ],
+    "قصص تعليمية": [
+      {name:"قصص الأخلاق", url:"https://4mykidz.com/%D9%82%D8%B5%D8%B5-%D8%A3%D8%B7%D9%81%D8%A7%D9%84-%D8%A8%D8%A7%D9%84%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9", bio:"قيم وأخلاق", source:"4MyKidz"},
+      {name:"قصص الأنبياء", url:"https://lumarstory.com/prophets-stories-for-kids/", bio:"سير الأنبياء", source:"Lumar Story"},
+      {name:"قصص الصحابة", url:"https://lumarstory.com/sahaba-kids-stories/", bio:"سير الصحابة", source:"Lumar Story"},
+      {name:"قصص الحيوانات", url:"https://flash-toons.com/%D9%82%D8%B5%D8%B5-%D8%A7%D8%B7%D9%81%D8%A7%D9%84-%D8%B9%D9%86-%D8%A7%D9%84%D8%AD%D9%8A%D9%88%D8%A7%D9%86%D8%A7%D8%AA/", bio:"عالم الحيوان", source:"Flash Toons"}
     ],
     "ألعاب وأنشطة": [
-      {name:"ألعاب تعليمية", url:"https://flash-toons.com/", bio:"أدوات تفاعلية", source:"Flash Toons"},
-      {name:"أوراق تلوين", url:"https://flash-toons.com/رسومات-تلوين/", bio:"رسومات للتلوين", source:"Flash Toons"}
+      {name:"ألعاب تعليمية", url:"https://flash-toons.com/%d8%ae%d8%af%d9%85%d8%a7%d8%aa%d9%86%d8%a7/%d8%a3%d8%af%d9%88%d8%a7%d8%aa-%d9%88%d9%8a%d8%a8-%d8%aa%d8%b9%d9%84%d9%8a%d9%85%d9%8a%d8%a9-%d8%aa%d9%81%d8%a7%d8%b9%d9%84%d9%8a%d8%a9-%d9%84%d9%84%d8%a7%d8%b7%d9%81%d8%a7%d9%84/", bio:"أدوات تفاعلية", source:"Flash Toons"},
+      {name:"أوراق تلوين", url:"https://flash-toons.com/%d8%b1%d8%b3%d9%88%d9%85%d8%a7%d8%aa-%d8%aa%d9%84%d9%88%d9%8a%d9%86/", bio:"رسومات للتلوين", source:"Flash Toons"},
+      {name:"ألغاز وأحاجي", url:"https://mawdoo3.com/%D8%A3%D9%84%D8%BA%D8%A7%D8%B2_%D8%B3%D9%87%D9%84%D8%A9_%D9%84%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84_%D9%85%D8%B9_%D8%AD%D9%84%D9%87%D8%A7#google_vignette", bio:"ألغاز سهلة", source:"Mawdoo3"}
     ]
   },
   audio: {
-    "كتب صوتية": [{name:"وجيز للكتب الصوتية", url:"https://wajeez.com/", bio:"مكتبة صوتية عربية", source:"Wajeez"}],
-    "بودكاست": [
+    "كتب صوتية عربية": [
+      {name:"وجيز للكتب الصوتية", url:"https://wajeez.com/", bio:"مكتبة صوتية عربية", source:"Wajeez"}
+    ],
+    "بودكاست أدبي": [
       {name:"بودكاست ريكورد", url:"https://www.podcastrecord.co/", bio:"بودكاست عربي", source:"PodcastRecord"},
       {name:"عرب بودكاست", url:"https://ar-podcast.com/", bio:"منصة بودكاست", source:"Ar-Podcast"},
       {name:"Podcast Addict", url:"https://podcastaddict.com/", bio:"تطبيق بودكاست", source:"PodcastAddict"}
     ],
-    "محاضرات ومسموعات": [{name:"محاضرات أدبية", url:"https://archive.org/details/soundbooks01", bio:"كتب صوتية أرشيفية", source:"Archive.org"}],
-    "قصص مسموعة": [{name:"قصص قصيرة مسموعة", url:"https://soundcloud.com/tags/قصص%20مسموعة", bio:"قصص على SoundCloud", source:"SoundCloud"}],
-    "تعليم اللغة": [{name:"تعلم العربية", url:"https://talkinarabic.com/", bio:"منصة تعليمية", source:"TalkInArabic"}]
+    "محاضرات ومسموعات": [
+      {name:"محاضرات أدبية", url:"https://archive.org/details/soundbooks01", bio:"كتب صوتية أرشيفية", source:"Archive.org"}
+    ],
+    "قصص مسموعة": [
+      {name:"قصص قصيرة مسموعة", url:"https://soundcloud.com/tags/%D9%82%D8%B5%D8%B5%20%D9%85%D8%B3%D9%85%D9%88%D8%B9%D8%A9", bio:"قصص على SoundCloud", source:"SoundCloud"}
+    ],
+    "تعليم اللغة": [
+      {name:"استماع للمبتدئين", url:"https://www.youtube.com/playlist?list=PLsr1ERsR7y1msjS-eQzSb0SfYId0Cyhnq", bio:"فيديوهات تعليمية", source:"YouTube"},
+      {name:"تعلم العربية", url:"https://talkinarabic.com/", bio:"منصة تعليمية", source:"TalkInArabic"}
+    ]
   },
   hindawi: {
     "📚 موضوعات الكتب": [
-      {name:"الأدب", url:"https://www.hindawi.org/books/categories/literature/", bio:"الأدب العربي والعالمي", source:"Hindawi"},
-      {name:"تاريخ", url:"https://www.hindawi.org/books/categories/history/", bio:"كتب التاريخ", source:"Hindawi"},
-      {name:"فلسفة", url:"https://www.hindawi.org/books/categories/philosophy/", bio:"كتب الفلسفة", source:"Hindawi"},
-      {name:"علم نفس", url:"https://www.hindawi.org/books/categories/psychology/", bio:"كتب علم النفس", source:"Hindawi"},
-      {name:"روايات", url:"https://www.hindawi.org/books/categories/novels/", bio:"مجموعة الروايات", source:"Hindawi"},
-      {name:"شعر", url:"https://www.hindawi.org/books/categories/poetry/", bio:"دواوين الشعر", source:"Hindawi"},
-      {name:"علوم", url:"https://www.hindawi.org/books/categories/science/", bio:"الكتب العلمية", source:"Hindawi"},
-      {name:"مسرحيات", url:"https://www.hindawi.org/books/categories/plays/", bio:"المسرحيات العربية والعالمية", source:"Hindawi"},
-      {name:"سير الأعلام", url:"https://www.hindawi.org/books/categories/biographies/", bio:"سير وتراجم الأعلام", source:"Hindawi"},
       {name:"إدارة الأعمال", url:"https://www.hindawi.org/books/categories/business/", bio:"كتب إدارة الأعمال", source:"Hindawi"},
+      {name:"الأدب", url:"https://www.hindawi.org/books/categories/literature/", bio:"الأدب العربي والعالمي", source:"Hindawi"},
+      {name:"أدب رحلات", url:"https://www.hindawi.org/books/categories/travel.literature/", bio:"أدب الرحلات والسفر", source:"Hindawi"},
+      {name:"أديان", url:"https://www.hindawi.org/books/categories/religions/", bio:"كتب الأديان والمعتقدات", source:"Hindawi"},
       {name:"اقتصاد", url:"https://www.hindawi.org/books/categories/economics/", bio:"كتب الاقتصاد", source:"Hindawi"},
+      {name:"تاريخ", url:"https://www.hindawi.org/books/categories/history/", bio:"كتب التاريخ", source:"Hindawi"},
+      {name:"تكنولوجيا", url:"https://www.hindawi.org/books/categories/technology/", bio:"كتب التكنولوجيا", source:"Hindawi"},
+      {name:"جغرافيا", url:"https://www.hindawi.org/books/categories/geography/", bio:"كتب الجغرافيا", source:"Hindawi"},
       {name:"خيال علمي", url:"https://www.hindawi.org/books/categories/science.fiction/", bio:"روايات الخيال العلمي", source:"Hindawi"},
-      {name:"نقد أدبي", url:"https://www.hindawi.org/books/categories/literary.criticism/", bio:"دراسات النقد الأدبي", source:"Hindawi"},
+      {name:"روايات", url:"https://www.hindawi.org/books/categories/novels/", bio:"مجموعة الروايات", source:"Hindawi"},
+      {name:"سياسة", url:"https://www.hindawi.org/books/categories/politics/", bio:"كتب السياسة", source:"Hindawi"},
+      {name:"سير الأعلام", url:"https://www.hindawi.org/books/categories/biographies/", bio:"سير وتراجم الأعلام", source:"Hindawi"},
+      {name:"شعر", url:"https://www.hindawi.org/books/categories/poetry/", bio:"دواوين الشعر", source:"Hindawi"},
+      {name:"صحة", url:"https://www.hindawi.org/books/categories/health/", bio:"كتب الصحة والطب", source:"Hindawi"},
+      {name:"علم نفس", url:"https://www.hindawi.org/books/categories/psychology/", bio:"كتب علم النفس", source:"Hindawi"},
+      {name:"علوم", url:"https://www.hindawi.org/books/categories/science/", bio:"الكتب العلمية", source:"Hindawi"},
+      {name:"علوم اجتماعية", url:"https://www.hindawi.org/books/categories/social.sciences/", bio:"العلوم الاجتماعية", source:"Hindawi"},
+      {name:"علوم البيئة", url:"https://www.hindawi.org/books/categories/environmental.sciences/", bio:"علوم البيئة والطبيعة", source:"Hindawi"},
+      {name:"علوم اللغة", url:"https://www.hindawi.org/books/categories/linguistics/", bio:"علوم اللغة واللغويات", source:"Hindawi"},
+      {name:"فلسفة", url:"https://www.hindawi.org/books/categories/philosophy/", bio:"كتب الفلسفة", source:"Hindawi"},
+      {name:"فنون", url:"https://www.hindawi.org/books/categories/arts/", bio:"كتب الفنون", source:"Hindawi"},
       {name:"قصص الأطفال", url:"https://www.hindawi.org/books/categories/children.stories/", bio:"قصص مخصصة للأطفال", source:"Hindawi"},
       {name:"قصص بوليسية", url:"https://www.hindawi.org/books/categories/detective.fiction/", bio:"روايات الجريمة والغموض", source:"Hindawi"},
-      {name:"علوم اللغة", url:"https://www.hindawi.org/books/categories/linguistics/", bio:"علوم اللغة واللغويات", source:"Hindawi"},
-      {name:"فنون", url:"https://www.hindawi.org/books/categories/arts/", bio:"كتب الفنون", source:"Hindawi"},
-      {name:"صحة", url:"https://www.hindawi.org/books/categories/health/", bio:"كتب الصحة والطب", source:"Hindawi"}
+      {name:"مسرحيات", url:"https://www.hindawi.org/books/categories/plays/", bio:"المسرحيات العربية والعالمية", source:"Hindawi"},
+      {name:"نقد أدبي", url:"https://www.hindawi.org/books/categories/literary.criticism/", bio:"دراسات النقد الأدبي", source:"Hindawi"}
     ],
     "🔗 السلاسل": [
       {name:"روايات تاريخ الإسلام", url:"https://www.hindawi.org/books/series/39519737/", bio:"سلسلة روايات تاريخ الإسلام", source:"Hindawi"},
@@ -1444,66 +1544,209 @@ const libraries = {
     ],
     "📦 المجموعات": [
       {name:"كتب صوتية", url:"https://www.hindawi.org/books/collections/98357923/", bio:"مجموعة الكتب الصوتية", source:"Hindawi"},
-      {name:"مختارات من الشعر العربي", url:"https://www.hindawi.org/books/collections/72589120/", bio:"مختارات شعرية معاصرة", source:"Hindawi"},
+      {name:"مختارات من الشعر العربي المعاصر", url:"https://www.hindawi.org/books/collections/72589120/", bio:"مختارات شعرية معاصرة", source:"Hindawi"},
       {name:"من أدب الحروب", url:"https://www.hindawi.org/books/collections/93089045/", bio:"أدب الحروب والصراعات", source:"Hindawi"},
       {name:"فلسفة سياسية", url:"https://www.hindawi.org/books/collections/37043989/", bio:"كتب الفلسفة السياسية", source:"Hindawi"},
       {name:"في الرياضيات", url:"https://www.hindawi.org/books/collections/94685465/", bio:"كتب الرياضيات", source:"Hindawi"},
+      {name:"كيمياء مبسطة", url:"https://www.hindawi.org/books/collections/84835614/", bio:"كتب الكيمياء المبسطة", source:"Hindawi"},
+      {name:"عن العالم الرقمي", url:"https://www.hindawi.org/books/collections/50340180/", bio:"كتب عن العالم الرقمي", source:"Hindawi"},
+      {name:"فلسفة الشك", url:"https://www.hindawi.org/books/collections/84159852/", bio:"كتب فلسفة الشك", source:"Hindawi"},
+      {name:"إطلالة على فرنسا", url:"https://www.hindawi.org/books/collections/57648973/", bio:"كتب عن فرنسا", source:"Hindawi"},
+      {name:"اليوم العالمي للترجمة", url:"https://www.hindawi.org/books/collections/20167656/", bio:"مجموعة الترجمات", source:"Hindawi"},
+      {name:"من أهم ترجمات هنداوي", url:"https://www.hindawi.org/books/collections/84192974/", bio:"أهم الترجمات", source:"Hindawi"},
+      {name:"في التاريخ الإسلامي", url:"https://www.hindawi.org/books/collections/28989898/", bio:"كتب التاريخ الإسلامي", source:"Hindawi"},
+      {name:"تعرف على روسيا", url:"https://www.hindawi.org/books/collections/13239163/", bio:"كتب عن روسيا", source:"Hindawi"},
+      {name:"تعريفات العلوم", url:"https://www.hindawi.org/books/collections/12719307/", bio:"تعريفات العلوم المختلفة", source:"Hindawi"},
+      {name:"اليوم العالمي للمرأة", url:"https://www.hindawi.org/books/collections/32620468/", bio:"كتب عن المرأة", source:"Hindawi"},
       {name:"روايات تاريخية", url:"https://www.hindawi.org/books/collections/87895059/", bio:"روايات تاريخية", source:"Hindawi"},
+      {name:"اقرأ في رمضان", url:"https://www.hindawi.org/books/collections/61264746/", bio:"مجموعة رمضان للقراءة", source:"Hindawi"},
+      {name:"عن الحرية", url:"https://www.hindawi.org/books/collections/53562194/", bio:"كتب عن الحرية", source:"Hindawi"},
+      {name:"تعرف على اليابان", url:"https://www.hindawi.org/books/collections/76361631/", bio:"كتب عن اليابان", source:"Hindawi"},
       {name:"روايات تحولت إلى أفلام", url:"https://www.hindawi.org/books/collections/13936547/", bio:"روايات سينمائية", source:"Hindawi"}
     ],
     "🌐 جميع الكتب": [{name:"مكتبة هنداوي الكاملة", url:"https://www.hindawi.org/books/", bio:"تصفح جميع الكتب", source:"Hindawi"}]
   },
   kolal: {
     "📚 أدب عربي": [
-      {name:"روايات عربية", url:"https://kolalkotob.com/search?q=روايات+عربية", bio:"316 كتاب", source:"kolalkotob"},
-      {name:"القصة القصيرة", url:"https://kolalkotob.com/search?q=القصة+القصيرة", bio:"63 كتاب", source:"kolalkotob"},
-      {name:"دواوين شعر عربية", url:"https://kolalkotob.com/search?q=دواوين+شعر+عربية", bio:"68 كتاب", source:"kolalkotob"},
-      {name:"المسرح العربي", url:"https://kolalkotob.com/search?q=المسرح+العربي", bio:"15 كتاب", source:"kolalkotob"},
-      {name:"نقد أدبي", url:"https://kolalkotob.com/search?q=نقد+أدبي", bio:"246 كتاب", source:"kolalkotob"}
+      {name:"روايات عربية", url:"https://kolalkotob.com/search?q=روايات+عربية", bio:"316 كتاب", source:"kolalkotob.com"},
+      {name:"القصة القصيرة", url:"https://kolalkotob.com/search?q=القصة+القصيرة", bio:"63 كتاب", source:"kolalkotob.com"},
+      {name:"أدب الرعب", url:"https://kolalkotob.com/search?q=أدب+الرعب", bio:"15 كتاب", source:"kolalkotob.com"},
+      {name:"الأدب الساخر", url:"https://kolalkotob.com/search?q=الأدب+الساخر", bio:"28 كتاب", source:"kolalkotob.com"},
+      {name:"أدب الرحلات", url:"https://kolalkotob.com/search?q=أدب+الرحلات", bio:"9 كتاب", source:"kolalkotob.com"},
+      {name:"دواوين شعر عربية", url:"https://kolalkotob.com/search?q=دواوين+شعر+عربية", bio:"68 كتاب", source:"kolalkotob.com"},
+      {name:"المسرح العربي", url:"https://kolalkotob.com/search?q=المسرح+العربي", bio:"15 كتاب", source:"kolalkotob.com"},
+      {name:"نقد أدبي", url:"https://kolalkotob.com/search?q=نقد+أدبي", bio:"246 كتاب", source:"kolalkotob.com"},
+      {name:"دراسات أدبية ونقدية", url:"https://kolalkotob.com/search?q=دراسات+أدبية+ونقدية", bio:"154 كتاب", source:"kolalkotob.com"},
+      {name:"نصوص أدبية", url:"https://kolalkotob.com/search?q=نصوص+أدبية", bio:"84 كتاب", source:"kolalkotob.com"},
+      {name:"سيرة روائية", url:"https://kolalkotob.com/search?q=سيرة+روائية", bio:"16 كتاب", source:"kolalkotob.com"},
+      {name:"السيمياء والسرد والخطاب", url:"https://kolalkotob.com/search?q=السيمياء+والسرد+والخطاب", bio:"60 كتاب", source:"kolalkotob.com"},
+      {name:"أدب وفكر", url:"https://kolalkotob.com/search?q=أدب+وفكر", bio:"31 كتاب", source:"kolalkotob.com"}
     ],
     "🌍 أدب مترجم": [
-      {name:"روايات مترجمة", url:"https://kolalkotob.com/search?q=روايات+مترجمة", bio:"533 كتاب", source:"kolalkotob"},
-      {name:"المسرح العالمي", url:"https://kolalkotob.com/search?q=المسرح+العالمي", bio:"51 كتاب", source:"kolalkotob"},
-      {name:"شعر مترجم", url:"https://kolalkotob.com/search?q=شعر+مترجم", bio:"35 كتاب", source:"kolalkotob"}
+      {name:"روايات مترجمة", url:"https://kolalkotob.com/search?q=روايات+مترجمة", bio:"533 كتاب", source:"kolalkotob.com"},
+      {name:"قصص مترجمة", url:"https://kolalkotob.com/search?q=قصص+مترجمة", bio:"72 كتاب", source:"kolalkotob.com"},
+      {name:"أدب الرعب مترجم", url:"https://kolalkotob.com/search?q=أدب+الرعب+مترجم", bio:"14 كتاب", source:"kolalkotob.com"},
+      {name:"المسرح العالمي", url:"https://kolalkotob.com/search?q=المسرح+العالمي", bio:"51 كتاب", source:"kolalkotob.com"},
+      {name:"نقد أدبي مترجم", url:"https://kolalkotob.com/search?q=نقد+أدبي+مترجم", bio:"97 كتاب", source:"kolalkotob.com"},
+      {name:"مذكرات أدبية مترجمة", url:"https://kolalkotob.com/search?q=مذكرات+أدبية+مترجمة", bio:"19 كتاب", source:"kolalkotob.com"},
+      {name:"أدب وفكر مترجم", url:"https://kolalkotob.com/search?q=أدب+وفكر+مترجم", bio:"47 كتاب", source:"kolalkotob.com"},
+      {name:"شعر مترجم", url:"https://kolalkotob.com/search?q=شعر+مترجم", bio:"35 كتاب", source:"kolalkotob.com"}
     ],
     "🔗 سلاسل روائية": [
-      {name:"سلسلة ما وراء الطبيعة", url:"https://kolalkotob.com/search?q=ما+وراء+الطبيعة", bio:"25 كتاب", source:"kolalkotob"},
-      {name:"المغامرون الخمسة", url:"https://kolalkotob.com/search?q=المغامرون+الخمسة", bio:"71 كتاب", source:"kolalkotob"},
-      {name:"روايات بوليسية", url:"https://kolalkotob.com/search?q=روايات+بوليسية", bio:"32 كتاب", source:"kolalkotob"}
+      {name:"سلسلة ما وراء الطبيعة", url:"https://kolalkotob.com/search?q=ما+وراء+الطبيعة", bio:"25 كتاب", source:"kolalkotob.com"},
+      {name:"روايات عالمية للجيب", url:"https://kolalkotob.com/search?q=روايات+عالمية+للجيب", bio:"26 كتاب", source:"kolalkotob.com"},
+      {name:"سلسلة المغامرون الخمسة", url:"https://kolalkotob.com/search?q=المغامرون+الخمسة", bio:"71 كتاب", source:"kolalkotob.com"},
+      {name:"روايات بوليسية", url:"https://kolalkotob.com/search?q=روايات+بوليسية", bio:"32 كتاب", source:"kolalkotob.com"},
+      {name:"مغامرات شيرلوك هولمز", url:"https://kolalkotob.com/search?q=شيرلوك+هولمز", bio:"4 كتاب", source:"kolalkotob.com"}
     ],
     "🔬 سلاسل علمية": [
-      {name:"عالم المعرفة", url:"https://kolalkotob.com/search?q=عالم+المعرفة", bio:"209 كتاب", source:"kolalkotob"},
-      {name:"مقدمة قصيرة جدا", url:"https://kolalkotob.com/search?q=مقدمة+قصيرة+جدا", bio:"57 كتاب", source:"kolalkotob"}
+      {name:"سلسلة عالم المعرفة", url:"https://kolalkotob.com/search?q=عالم+المعرفة", bio:"209 كتاب", source:"kolalkotob.com"},
+      {name:"سلسلة مقدمة قصيرة جدا", url:"https://kolalkotob.com/search?q=مقدمة+قصيرة+جدا", bio:"57 كتاب", source:"kolalkotob.com"},
+      {name:"كتب طبيب العائلة", url:"https://kolalkotob.com/search?q=طبيب+العائلة", bio:"31 كتاب", source:"kolalkotob.com"},
+      {name:"سلسلة دفاتر فلسفية", url:"https://kolalkotob.com/search?q=دفاتر+فلسفية", bio:"14 كتاب", source:"kolalkotob.com"}
+    ],
+    "🔭 علوم طبيعية": [
+      {name:"علوم طبية", url:"https://kolalkotob.com/search?q=علوم+طبية", bio:"29 كتاب", source:"kolalkotob.com"},
+      {name:"علوم الرياضيات", url:"https://kolalkotob.com/search?q=علوم+الرياضيات", bio:"29 كتاب", source:"kolalkotob.com"},
+      {name:"علوم فيزيائية", url:"https://kolalkotob.com/search?q=علوم+فيزيائية", bio:"22 كتاب", source:"kolalkotob.com"},
+      {name:"علم الأحياء", url:"https://kolalkotob.com/search?q=علم+الأحياء", bio:"15 كتاب", source:"kolalkotob.com"},
+      {name:"الكون والفلك", url:"https://kolalkotob.com/search?q=الكون+والفلك", bio:"16 كتاب", source:"kolalkotob.com"},
+      {name:"تقنية معلومات", url:"https://kolalkotob.com/search?q=تقنية+معلومات", bio:"15 كتاب", source:"kolalkotob.com"}
     ],
     "🕌 المكتبة الإسلامية": [
-      {name:"علوم القرآن", url:"https://kolalkotob.com/search?q=علوم+القرآن", bio:"31 كتاب", source:"kolalkotob"},
-      {name:"التفسير والحديث", url:"https://kolalkotob.com/search?q=التفسير+والحديث", bio:"41 كتاب", source:"kolalkotob"},
-      {name:"السيرة النبوية", url:"https://kolalkotob.com/search?q=السيرة+النبوية", bio:"9 كتاب", source:"kolalkotob"},
-      {name:"الفقه الإسلامي", url:"https://kolalkotob.com/search?q=الفقه+الإسلامي", bio:"38 كتاب", source:"kolalkotob"}
+      {name:"علوم القرآن", url:"https://kolalkotob.com/search?q=علوم+القرآن", bio:"31 كتاب", source:"kolalkotob.com"},
+      {name:"التفسير والحديث", url:"https://kolalkotob.com/search?q=التفسير+والحديث", bio:"41 كتاب", source:"kolalkotob.com"},
+      {name:"السيرة النبوية", url:"https://kolalkotob.com/search?q=السيرة+النبوية", bio:"9 كتاب", source:"kolalkotob.com"},
+      {name:"الفقه الإسلامي", url:"https://kolalkotob.com/search?q=الفقه+الإسلامي", bio:"38 كتاب", source:"kolalkotob.com"},
+      {name:"فكر إسلامي", url:"https://kolalkotob.com/search?q=فكر+إسلامي", bio:"27 كتاب", source:"kolalkotob.com"},
+      {name:"العقيدة الإسلامية", url:"https://kolalkotob.com/search?q=العقيدة+الإسلامية", bio:"12 كتاب", source:"kolalkotob.com"}
+    ],
+    "✝️ علم الأديان": [
+      {name:"مقارنة أديان", url:"https://kolalkotob.com/search?q=مقارنة+أديان", bio:"31 كتاب", source:"kolalkotob.com"},
+      {name:"تاريخ الأديان", url:"https://kolalkotob.com/search?q=تاريخ+الأديان", bio:"24 كتاب", source:"kolalkotob.com"},
+      {name:"الديانات الإبراهيمية", url:"https://kolalkotob.com/search?q=الديانات+الإبراهيمية", bio:"12 كتاب", source:"kolalkotob.com"}
+    ],
+    "👥 علوم إنسانية": [
+      {name:"القانون والحقوق", url:"https://kolalkotob.com/search?q=القانون+والحقوق", bio:"95 كتاب", source:"kolalkotob.com"},
+      {name:"علم الاقتصاد", url:"https://kolalkotob.com/search?q=علم+الاقتصاد", bio:"53 كتاب", source:"kolalkotob.com"},
+      {name:"الجغرافيا", url:"https://kolalkotob.com/search?q=الجغرافيا", bio:"71 كتاب", source:"kolalkotob.com"},
+      {name:"مكتبات ومعلومات", url:"https://kolalkotob.com/search?q=مكتبات+ومعلومات", bio:"41 كتاب", source:"kolalkotob.com"}
+    ],
+    "🧠 علم الاجتماع": [
+      {name:"دراسات اجتماعية", url:"https://kolalkotob.com/search?q=دراسات+اجتماعية", bio:"222 كتاب", source:"kolalkotob.com"},
+      {name:"علوم اجتماعية", url:"https://kolalkotob.com/search?q=علوم+اجتماعية", bio:"228 كتاب", source:"kolalkotob.com"},
+      {name:"فكر اجتماعي", url:"https://kolalkotob.com/search?q=فكر+اجتماعي", bio:"44 كتاب", source:"kolalkotob.com"}
+    ],
+    "🎨 فنون جميلة": [
+      {name:"سينما وتلفزيون", url:"https://kolalkotob.com/search?q=سينما+وتلفزيون", bio:"27 كتاب", source:"kolalkotob.com"},
+      {name:"التراث الشعبي", url:"https://kolalkotob.com/search?q=التراث+الشعبي", bio:"12 كتاب", source:"kolalkotob.com"},
+      {name:"فنون بصرية", url:"https://kolalkotob.com/search?q=فنون+بصرية", bio:"11 كتاب", source:"kolalkotob.com"}
     ],
     "🤔 فلسفة ومنطق": [
-      {name:"فلسفة معاصرة", url:"https://kolalkotob.com/search?q=فلسفة+معاصرة", bio:"99 كتاب", source:"kolalkotob"},
-      {name:"فلسفة العلوم", url:"https://kolalkotob.com/search?q=فلسفة+العلوم", bio:"90 كتاب", source:"kolalkotob"},
-      {name:"فلسفة الأخلاق", url:"https://kolalkotob.com/search?q=فلسفة+الأخلاق", bio:"48 كتاب", source:"kolalkotob"}
+      {name:"فلسفة معاصرة", url:"https://kolalkotob.com/search?q=فلسفة+معاصرة", bio:"99 كتاب", source:"kolalkotob.com"},
+      {name:"فلسفة العلوم", url:"https://kolalkotob.com/search?q=فلسفة+العلوم", bio:"90 كتاب", source:"kolalkotob.com"},
+      {name:"علم المنطق", url:"https://kolalkotob.com/search?q=علم+المنطق", bio:"42 كتاب", source:"kolalkotob.com"},
+      {name:"فلسفة الأخلاق", url:"https://kolalkotob.com/search?q=فلسفة+الأخلاق", bio:"48 كتاب", source:"kolalkotob.com"}
     ],
     "🧠 علم النفس": [
-      {name:"الصحة النفسية", url:"https://kolalkotob.com/search?q=الصحة+النفسية", bio:"40 كتاب", source:"kolalkotob"},
-      {name:"التحليل النفسي", url:"https://kolalkotob.com/search?q=التحليل+النفسي", bio:"62 كتاب", source:"kolalkotob"},
-      {name:"علم النفس الاجتماعي", url:"https://kolalkotob.com/search?q=علم+النفس+الاجتماعي", bio:"58 كتاب", source:"kolalkotob"}
+      {name:"الصحة النفسية", url:"https://kolalkotob.com/search?q=الصحة+النفسية", bio:"40 كتاب", source:"kolalkotob.com"},
+      {name:"التحليل النفسي", url:"https://kolalkotob.com/search?q=التحليل+النفسي", bio:"62 كتاب", source:"kolalkotob.com"},
+      {name:"علم النفس الاجتماعي", url:"https://kolalkotob.com/search?q=علم+النفس+الاجتماعي", bio:"58 كتاب", source:"kolalkotob.com"}
     ],
     "📜 التاريخ والحضارات": [
-      {name:"تاريخ إسلامي", url:"https://kolalkotob.com/search?q=تاريخ+إسلامي", bio:"36 كتاب", source:"kolalkotob"},
-      {name:"تاريخ العرب", url:"https://kolalkotob.com/search?q=تاريخ+العرب", bio:"22 كتاب", source:"kolalkotob"}
+      {name:"تاريخ إسلامي", url:"https://kolalkotob.com/search?q=تاريخ+إسلامي", bio:"36 كتاب", source:"kolalkotob.com"},
+      {name:"تاريخ العرب", url:"https://kolalkotob.com/search?q=تاريخ+العرب", bio:"22 كتاب", source:"kolalkotob.com"},
+      {name:"تاريخ سياسي", url:"https://kolalkotob.com/search?q=تاريخ+سياسي", bio:"34 كتاب", source:"kolalkotob.com"},
+      {name:"علم الآثار", url:"https://kolalkotob.com/search?q=علم+الآثار", bio:"14 كتاب", source:"kolalkotob.com"},
+      {name:"الرحالة والمستشرقين", url:"https://kolalkotob.com/search?q=الرحالة+والمستشرقين", bio:"9 كتاب", source:"kolalkotob.com"}
+    ],
+    "📰 إعلام واتصال": [
+      {name:"الصحافة والنشر", url:"https://kolalkotob.com/search?q=الصحافة+والنشر", bio:"51 كتاب", source:"kolalkotob.com"},
+      {name:"الإعلام والاتصال", url:"https://kolalkotob.com/search?q=الإعلام+والاتصال", bio:"55 كتاب", source:"kolalkotob.com"},
+      {name:"العلاقات العامة", url:"https://kolalkotob.com/search?q=العلاقات+العامة", bio:"14 كتاب", source:"kolalkotob.com"}
+    ],
+    "🗣️ اللغة واللسانيات": [
+      {name:"علم اللسانيات", url:"https://kolalkotob.com/search?q=علم+اللسانيات", bio:"96 كتاب", source:"kolalkotob.com"},
+      {name:"النحو والصرف", url:"https://kolalkotob.com/search?q=النحو+والصرف", bio:"80 كتاب", source:"kolalkotob.com"},
+      {name:"البلاغة والأسلوب", url:"https://kolalkotob.com/search?q=البلاغة+والأسلوب", bio:"62 كتاب", source:"kolalkotob.com"},
+      {name:"علم الترجمة", url:"https://kolalkotob.com/search?q=علم+الترجمة", bio:"24 كتاب", source:"kolalkotob.com"}
+    ],
+    "🎓 علوم تربوية": [
+      {name:"علوم تربوية", url:"https://kolalkotob.com/search?q=علوم+تربوية", bio:"71 كتاب", source:"kolalkotob.com"},
+      {name:"مناهج وطرق تدريس", url:"https://kolalkotob.com/search?q=مناهج+وطرق+تدريس", bio:"73 كتاب", source:"kolalkotob.com"},
+      {name:"التربية الخاصة", url:"https://kolalkotob.com/search?q=التربية+الخاصة", bio:"45 كتاب", source:"kolalkotob.com"},
+      {name:"علم النفس التربوي", url:"https://kolalkotob.com/search?q=علم+النفس+التربوي", bio:"53 كتاب", source:"kolalkotob.com"}
     ],
     "🚀 تنمية بشرية": [
-      {name:"تطوير الذات", url:"https://kolalkotob.com/search?q=تطوير+الذات", bio:"24 كتاب", source:"kolalkotob"},
-      {name:"مهارات القيادة", url:"https://kolalkotob.com/search?q=مهارات+القيادة", bio:"17 كتاب", source:"kolalkotob"},
-      {name:"إدارة الوقت", url:"https://kolalkotob.com/search?q=إدارة+الوقت", bio:"5 كتاب", source:"kolalkotob"}
+      {name:"تطوير الذات", url:"https://kolalkotob.com/search?q=تطوير+الذات", bio:"24 كتاب", source:"kolalkotob.com"},
+      {name:"مهارات القيادة", url:"https://kolalkotob.com/search?q=مهارات+القيادة", bio:"17 كتاب", source:"kolalkotob.com"},
+      {name:"مهارات التفكير الإيجابي", url:"https://kolalkotob.com/search?q=التفكير+الإيجابي", bio:"47 كتاب", source:"kolalkotob.com"},
+      {name:"إدارة الوقت", url:"https://kolalkotob.com/search?q=إدارة+الوقت", bio:"5 كتاب", source:"kolalkotob.com"}
+    ],
+    "👤 بيوغرافيا": [
+      {name:"سير وتراجم", url:"https://kolalkotob.com/search?q=سير+وتراجم", bio:"11 كتاب", source:"kolalkotob.com"},
+      {name:"فلاسفة ومفكرون", url:"https://kolalkotob.com/search?q=فلاسفة+ومفكرون", bio:"22 كتاب", source:"kolalkotob.com"},
+      {name:"أدباء وشعراء", url:"https://kolalkotob.com/search?q=أدباء+وشعراء", bio:"27 كتاب", source:"kolalkotob.com"},
+      {name:"مذكرات", url:"https://kolalkotob.com/search?q=مذكرات", bio:"2 كتاب", source:"kolalkotob.com"}
+    ],
+    "📖 قواميس ومعاجم": [
+      {name:"معاجم اللغة والأدب", url:"https://kolalkotob.com/search?q=معاجم+اللغة+والأدب", bio:"53 كتاب", source:"kolalkotob.com"},
+      {name:"قواميس اللغات", url:"https://kolalkotob.com/search?q=قواميس+اللغات", bio:"11 كتاب", source:"kolalkotob.com"},
+      {name:"المعاجم المتخصصة", url:"https://kolalkotob.com/search?q=المعاجم+المتخصصة", bio:"54 كتاب", source:"kolalkotob.com"}
+    ],
+    "📚 موسوعات": [
+      {name:"موسوعات تاريخية", url:"https://kolalkotob.com/search?q=موسوعات+تاريخية", bio:"21 كتاب", source:"kolalkotob.com"},
+      {name:"موسوعات إسلامية", url:"https://kolalkotob.com/search?q=موسوعات+إسلامية", bio:"11 كتاب", source:"kolalkotob.com"},
+      {name:"الأطالس", url:"https://kolalkotob.com/search?q=الأطالس", bio:"6 كتاب", source:"kolalkotob.com"}
+    ],
+    "💼 علوم إدارية": [
+      {name:"إدارة أعمال", url:"https://kolalkotob.com/search?q=إدارة+أعمال", bio:"32 كتاب", source:"kolalkotob.com"},
+      {name:"محاسبة ومالية", url:"https://kolalkotob.com/search?q=محاسبة+ومالية", bio:"22 كتاب", source:"kolalkotob.com"},
+      {name:"تسويق ومبيعات", url:"https://kolalkotob.com/search?q=تسويق+ومبيعات", bio:"31 كتاب", source:"kolalkotob.com"},
+      {name:"إدارة الموارد البشرية", url:"https://kolalkotob.com/search?q=إدارة+الموارد+البشرية", bio:"28 كتاب", source:"kolalkotob.com"}
+    ],
+    "🗳️ علوم سياسية": [
+      {name:"علوم سياسية", url:"https://kolalkotob.com/search?q=علوم+سياسية", bio:"99 كتاب", source:"kolalkotob.com"},
+      {name:"علاقات دولية", url:"https://kolalkotob.com/search?q=علاقات+دولية", bio:"70 كتاب", source:"kolalkotob.com"},
+      {name:"فكر سياسي", url:"https://kolalkotob.com/search?q=فكر+سياسي", bio:"62 كتاب", source:"kolalkotob.com"},
+      {name:"اقتصاد سياسي", url:"https://kolalkotob.com/search?q=اقتصاد+سياسي", bio:"52 كتاب", source:"kolalkotob.com"}
+    ],
+    "📦 القسم العام": [
+      {name:"التراث", url:"https://kolalkotob.com/search?q=التراث", bio:"31 كتاب", source:"kolalkotob.com"},
+      {name:"الأسرة والطفل", url:"https://kolalkotob.com/search?q=الأسرة+والطفل", bio:"8 كتاب", source:"kolalkotob.com"},
+      {name:"التصوف والروحانيات", url:"https://kolalkotob.com/search?q=التصوف+والروحانيات", bio:"36 كتاب", source:"kolalkotob.com"},
+      {name:"غرائب وأساطير", url:"https://kolalkotob.com/search?q=غرائب+وأساطير", bio:"15 كتاب", source:"kolalkotob.com"},
+      {name:"تعليم اللغة الإنجليزية", url:"https://kolalkotob.com/search?q=تعليم+اللغة+الإنجليزية", bio:"20 كتاب", source:"kolalkotob.com"}
+    ],
+    "🔍 بحث ونشر علمي": [
+      {name:"مناهج البحث العلمي", url:"https://kolalkotob.com/search?q=مناهج+البحث+العلمي", bio:"67 كتاب", source:"kolalkotob.com"},
+      {name:"تحقيق النصوص", url:"https://kolalkotob.com/search?q=تحقيق+النصوص", bio:"12 كتاب", source:"kolalkotob.com"},
+      {name:"النشر العلمي", url:"https://kolalkotob.com/search?q=النشر+العلمي", bio:"15 كتاب", source:"kolalkotob.com"}
+    ],
+    "🏥 طب وصحة": [
+      {name:"الصحة العامة", url:"https://kolalkotob.com/search?q=الصحة+العامة", bio:"12 كتاب", source:"kolalkotob.com"},
+      {name:"الغذاء والتغذية", url:"https://kolalkotob.com/search?q=الغذاء+والتغذية", bio:"17 كتاب", source:"kolalkotob.com"},
+      {name:"طب الأعشاب", url:"https://kolalkotob.com/search?q=طب+الأعشاب", bio:"21 كتاب", source:"kolalkotob.com"},
+      {name:"الرياضة واللياقة", url:"https://kolalkotob.com/search?q=الرياضة+واللياقة", bio:"12 كتاب", source:"kolalkotob.com"}
+    ],
+    "🧬 أنثروبولوجيا": [
+      {name:"الأنثروبولوجيا الاجتماعية", url:"https://kolalkotob.com/search?q=الأنثروبولوجيا+الاجتماعية", bio:"100 كتاب", source:"kolalkotob.com"},
+      {name:"الأنثروبولوجيا الثقافية", url:"https://kolalkotob.com/search?q=الأنثروبولوجيا+الثقافية", bio:"54 كتاب", source:"kolalkotob.com"}
+    ],
+    "💭 فكر وثقافة": [
+      {name:"دراسات ثقافية", url:"https://kolalkotob.com/search?q=دراسات+ثقافية", bio:"27 كتاب", source:"kolalkotob.com"},
+      {name:"فكر معاصر", url:"https://kolalkotob.com/search?q=فكر+معاصر", bio:"22 كتاب", source:"kolalkotob.com"},
+      {name:"النقد الثقافي", url:"https://kolalkotob.com/search?q=النقد+الثقافي", bio:"18 كتاب", source:"kolalkotob.com"}
+    ],
+    "🎓 رسائل وأطروحات": [
+      {name:"رسائل ماجستير", url:"https://kolalkotob.com/search?q=رسائل+ماجستير", bio:"7 كتاب", source:"kolalkotob.com"},
+      {name:"أطروحات دكتوراه", url:"https://kolalkotob.com/search?q=أطروحات+دكتوراه", bio:"2 كتاب", source:"kolalkotob.com"},
+      {name:"محاضرات جامعية", url:"https://kolalkotob.com/search?q=محاضرات+جامعية", bio:"12 كتاب", source:"kolalkotob.com"}
     ],
     "🌐 روابط رئيسية": [
-      {name:"🏠 الصفحة الرئيسية", url:"https://kolalkotob.com", bio:"تصفح كل الكتب", source:"kolalkotob"},
-      {name:"📚 جميع الفئات", url:"https://kolalkotob.com/cats", bio:"قائمة الفئات الكاملة", source:"kolalkotob"},
-      {name:"🔍 بحث متقدم", url:"https://kolalkotob.com/search", bio:"ابحث عن أي كتاب", source:"kolalkotob"}
+      {name:"🏠 الصفحة الرئيسية", url:"https://kolalkotob.com", bio:"تصفح كل الكتب", source:"kolalkotob.com"},
+      {name:"📚 جميع الفئات", url:"https://kolalkotob.com/cats", bio:"قائمة الفئات الكاملة", source:"kolalkotob.com"},
+      {name:"🔍 بحث متقدم", url:"https://kolalkotob.com/search", bio:"ابحث عن أي كتاب", source:"kolalkotob.com"}
     ]
   },
   archive: {
@@ -1512,24 +1755,31 @@ const libraries = {
       {name:"Canadian Libraries", url:"https://archive.org/details/toronto", bio:"مكتبات كندا", source:"archive.org"},
       {name:"Universal Library", url:"https://archive.org/details/universallibrary", bio:"المكتبة العالمية", source:"archive.org"}
     ],
+    "🌍 المكتبات العالمية": [
+      {name:"Project Gutenberg", url:"https://archive.org/details/gutenberg", bio:"كتب مجانية", source:"archive.org"},
+      {name:"Biodiversity Heritage Library", url:"https://archive.org/details/biodiversity", bio:"مكتبة التنوع البيولوجي", source:"archive.org"},
+      {name:"Additional Collections", url:"https://archive.org/details/additional_collections", bio:"مجموعات إضافية", source:"archive.org"}
+    ],
     "📖 الكتب والنصوص": [
       {name:"All Texts", url:"https://archive.org/details/texts", bio:"جميع النصوص", source:"archive.org"},
       {name:"Fiction & Literature", url:"https://archive.org/details/ia_fiction_literature", bio:"خيال وأدب", source:"archive.org"},
       {name:"Poetry", url:"https://archive.org/details/ia_poetry", bio:"شعر", source:"archive.org"},
       {name:"Children's Books", url:"https://archive.org/details/ia_childrens_books", bio:"كتب أطفال", source:"archive.org"}
     ],
-    "🎓 الأكاديمي": [
+    "🎓 الأكاديمي والبحثي": [
       {name:"Academic Texts", url:"https://archive.org/details/academic_texts", bio:"نصوص أكاديمية", source:"archive.org"},
-      {name:"Research Papers", url:"https://archive.org/details/research_papers", bio:"أبحاث علمية", source:"archive.org"}
+      {name:"Research Papers", url:"https://archive.org/details/research_papers", bio:"أبحاث علمية", source:"archive.org"},
+      {name:"Theses & Dissertations", url:"https://archive.org/details/theses_dissertations", bio:"أطروحات", source:"archive.org"}
     ],
     "📜 التراث والتاريخ": [
       {name:"Historical Texts", url:"https://archive.org/details/historical_texts", bio:"نصوص تاريخية", source:"archive.org"},
       {name:"Rare Books", url:"https://archive.org/details/rare_books", bio:"كتب نادرة", source:"archive.org"},
       {name:"Manuscripts", url:"https://archive.org/details/manuscripts", bio:"مخطوطات", source:"archive.org"}
     ],
-    "🔍 البحث": [
+    "🔍 البحث المتقدم": [
       {name:"Advanced Search", url:"https://archive.org/advancedsearch.php", bio:"بحث متقدم", source:"archive.org"},
-      {name:"Browse Collections", url:"https://archive.org/details/collection", bio:"تصفح المجموعات", source:"archive.org"}
+      {name:"Browse Collections", url:"https://archive.org/details/collection", bio:"تصفح المجموعات", source:"archive.org"},
+      {name:"New & Upcoming", url:"https://archive.org/details/newandupcoming", bio:"جديد وقادم", source:"archive.org"}
     ]
   }
 };
@@ -1906,9 +2156,9 @@ function renderStories() {
 /* ═══════════════════════════════════════════════
    SHARE
 ═══════════════════════════════════════════════ */
-function shareNative() { if (navigator.share) navigator.share({ title: 'دَفْتَرُ خَانَة', text: 'مكتبة رقمية شاملة', url: location.href }).catch(() => { }); else copyLink(); }
+function shareNative() { if (navigator.share) navigator.share({ title: 'دَفْتَرُ خَانَة | عقل المؤلف بين يديك', text: 'مكتبة رقمية شاملة', url: location.href }).catch(() => { }); else copyLink(); }
 function sharePlatform(p) {
-  const url = encodeURIComponent(location.href), txt = encodeURIComponent('دَفْتَرُ خَانَة | مكتبة رقمية شاملة');
+  const url = encodeURIComponent(location.href), txt = encodeURIComponent('دَفْتَرُ خَانَة | عقل المؤلف بين يديك');
   const m = {
     whatsapp: `https://wa.me/?text=${txt}%20${url}`,
     telegram: `https://t.me/share/url?url=${url}&text=${txt}`,
